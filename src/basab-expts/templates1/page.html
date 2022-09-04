@@ -1,0 +1,9 @@
+{% from 'dialogs.html' import dialog_1 as dlg %}
+
+{% include 'header.html' %}
+<h1>Содержимое страницы</h1>
+{% include 'content.html' ignore missing %}
+
+{% include 'content23456.html' ignore missing %}
+{{ dlg(dialog.title, dialog.message) }}
+{% include 'footer.html' %}

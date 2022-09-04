@@ -4,12 +4,12 @@ from jinja2 import Environment, FileSystemLoader
 
 from src.misc.persons import persons
 
-domain = 'https://www.google.com'
-dialog = {'title': 'Внимание!', 'msg': 'Это тестовый диалог'}
+dialog = {'title': 'basab title'}
+# dialog = {'title': 'Внимание!', 'msg': 'Это тестовый диалог'}
 
-file_loader = FileSystemLoader('../templates')
+file_loader = FileSystemLoader('./templates1')
 env = Environment(loader=file_loader)
 
 tm = env.get_template('page.html')
-msg = tm.render(users=persons, domain=domain, title='Test page', dialog=dialog)
+msg = tm.render(users=persons,  dialog=dialog)
 print(msg)
