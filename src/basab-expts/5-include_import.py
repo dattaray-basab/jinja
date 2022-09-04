@@ -1,4 +1,4 @@
-import pathlib
+# import pathlib
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -10,6 +10,6 @@ dialog = {'title': 'basab title'}
 file_loader = FileSystemLoader('./templates1')
 env = Environment(loader=file_loader)
 
-tm = env.get_template('page.html')
-msg = tm.render(users=persons,  dialog=dialog)
+tm = env.get_template('content2.html')
+msg = tm.render(users=persons)
 print(msg)
