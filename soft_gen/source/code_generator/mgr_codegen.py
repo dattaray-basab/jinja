@@ -19,7 +19,7 @@ def codegen_mgr(caller_filepath):
     tokens = fn_get_tokens()
     fn_getenv = env_mgr()
 
-    def fn_pickle_writer(file_path, data):
+    def _fn_write_text_file(file_path, data):
         try:
             dir_path = os.path.dirname(file_path)
             if not os.path.exists( dir_path ):
@@ -50,7 +50,7 @@ def codegen_mgr(caller_filepath):
 
             source_filepath = os.path.join(source_dirpath, filename)
 
-            fn_pickle_writer( source_filepath, data )
+            _fn_write_text_file( source_filepath, data )
 
             # print(source_dirpath)
             x = 1
