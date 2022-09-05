@@ -1,1 +1,1 @@
-RAW_PATH = 'Raw'
+RAW_DIRPATH = 'Raw'
