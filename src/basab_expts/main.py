@@ -8,7 +8,7 @@ fn_get_tokens = token_mgr()
 
 env = fn_getenv()
 
-tm = env.get_template('content2.html')
+tm = env.get_template('content2.x')
 tokens = fn_get_tokens()
 msg = tm.render(tokens)
 
