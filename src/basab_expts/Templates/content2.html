@@ -2,8 +2,8 @@ START
 <ul>
     {% for u in users -%}
     <li>
-        {{ u.name }}
+        {{ u.name | filter_x1}}
     </li>
     {% endfor -%}
 </ul>
-END
+ENDÏ
