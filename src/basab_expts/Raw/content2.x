@@ -1,4 +1,4 @@
-START
+START 2
 <ul>
     {% for u in users -%}
     <li>
@@ -8,4 +8,6 @@ START
     </li>
     {% endfor -%}
 </ul>
-ENDÏ
+END 2
+
+

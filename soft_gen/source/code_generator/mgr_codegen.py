@@ -8,6 +8,9 @@ from src.basab_expts.Tokens.mgr_token import token_mgr
 def codegen_mgr(caller_filepath):
     _raw_dir_path = os.path.join(os.path.dirname(caller_filepath), RAW_DIRPATH)
     _source_dir_path = os.path.join( os.path.dirname( caller_filepath ), SOURCE_DIRPATH )
+    if os.path.exists(_source_dir_path):
+        os.removedirs(_source_dir_path)
+    os.mkdir(_source_dir_path)
 
     fn_get_tokens = token_mgr()
     tokens = fn_get_tokens()
@@ -19,20 +22,28 @@ def codegen_mgr(caller_filepath):
             tm = env.get_template( filename )
             msg = tm.render( tokens )
             print(msg)
+
+            # suffix_source_dirpath = dirpath.lsplit('/')[1]
+            # source_dirpath = os.path.join(SOURCE_DIRPATH, suffix_source_dirpath)
+            # print(source_dirpath)
+            x = 1
         except Exception as x:
             print(x)
 
+    _raw_dirs_and_files = []
     def _fn_generate_code_for_dir(root_dirpath):
         for root, dirs, files in os.walk( root_dirpath ):
-            for filename in files:
-                _fn_generate_code_for_file(root, filename)
-            for subdir in dirs:
-                _fn_generate_code_for_dir( os.path.join(root, subdir) )
+            _raw_dirs_and_files.append( (root, files) )
 
+        for d, files in _raw_dirs_and_files:
+            for f in files:
+                _fn_generate_code_for_file(d, f)
             x = 1
 
     def _fn_generate_code():
         _fn_generate_code_for_dir( _raw_dir_path )
+
+
 
     _fn_generate_code()
 
