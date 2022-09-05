@@ -1,21 +1,15 @@
 import os
-import pickle
-import shutil
 
 from soft_gen.source.common.constants import RAW_DIRPATH, SOURCE_DIRPATH
+from soft_gen.source.common.mgr_app_info import app_info_mgr
 from soft_gen.source.env_mgt.mgr_env import env_mgr
-from src.basab_expts.Tokens.mgr_token import token_mgr
+from soft_gen.source.common.mgr_token import token_mgr
 
 
+def codegen_mgr(caller_filepath, app_info = None):
+    app_info = app_info_mgr(caller_filepath)
 
-def codegen_mgr(caller_filepath):
-    _raw_dir_path = os.path.join(os.path.dirname(caller_filepath), RAW_DIRPATH)
-    _source_dir_path = os.path.join( os.path.dirname( caller_filepath ), SOURCE_DIRPATH )
-    if os.path.exists(_source_dir_path):
-        shutil.rmtree( _source_dir_path )
-    os.mkdir(_source_dir_path)
-
-    fn_get_tokens = token_mgr()
+    fn_get_tokens = token_mgr(app_info)
     tokens = fn_get_tokens()
     fn_getenv = env_mgr()
 
@@ -59,10 +53,6 @@ def codegen_mgr(caller_filepath):
             x = 1
 
     def _fn_generate_code():
-        _fn_generate_code_for_dir( _raw_dir_path )
-
-
+        _fn_generate_code_for_dir( _app_info.raw_dir_path )
 
     _fn_generate_code()
-
-    return
