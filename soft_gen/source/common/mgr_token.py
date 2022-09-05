@@ -1,21 +1,29 @@
 import json
+import os
+
+from soft_gen.source.common.dot_dict import DotDict
 
 
-def token_mgr(app_info):
-    def fn_get_tokens():
+def token_mgr():
+    def fn_get_tokens(token_dirpath):
+        try:
+            file_paths = []
+            tokens = DotDict( {} )
+            for root, directories, file in os.walk( token_dirpath ):
+                for file in file:
+                    if (file.endswith( ".json" )):
+                        file_paths.append( os.path.join(root, file) )
+            tokens = DotDict({})
+            for filepath in file_paths:
+                f = open( filepath)
+                data = json.load( f )
+                file_name, file_ext = os.path.basename(filepath).rsplit('.')
+                tokens[file_name] = data
 
-        f = open( '../../../src/basab_expts/__TOKENS/t1.json' )
+            return tokens
 
-
-        tokens = json.load( f )
-
-        # tokens = {'users': [
-        #     {'name': 'Alex', 'age': 18, 'weight': 78.5},
-        #     {'name': 'Nikolas', 'age': 20, 'weight': 92.1},
-        #     {'name': 'Ivan', 'age': 39, 'weight': 83.9}
-        # ]}
-        #
-
-        return tokens
+        except Exception as x:
+            print(x)
+            return None
 
     return  fn_get_tokens
