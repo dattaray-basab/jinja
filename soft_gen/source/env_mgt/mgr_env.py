@@ -13,5 +13,4 @@ def env_mgr():
         env.globals["fn_x2"] = fn_x2
         return env
 
-
     return fn_getenv
