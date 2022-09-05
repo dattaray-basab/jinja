@@ -23,9 +23,9 @@ def codegen_mgr(caller_filepath):
             msg = tm.render( tokens )
             print(msg)
 
-            # suffix_source_dirpath = dirpath.lsplit('/')[1]
-            # source_dirpath = os.path.join(SOURCE_DIRPATH, suffix_source_dirpath)
-            # print(source_dirpath)
+            suffix_source_dirpath, _ = dirpath.rsplit('/', 1)
+            source_dirpath = os.path.join( suffix_source_dirpath, SOURCE_DIRPATH)
+            print(source_dirpath)
             x = 1
         except Exception as x:
             print(x)
