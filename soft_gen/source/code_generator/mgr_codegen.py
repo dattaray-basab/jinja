@@ -19,18 +19,13 @@ def codegen_mgr(caller_filepath):
     tokens = fn_get_tokens()
     fn_getenv = env_mgr()
 
-    def _fn_write_text_file(file_path, data):
+    def _fn_replace_write_text_file(file_path, data):
         try:
             dir_path = os.path.dirname(file_path)
             if not os.path.exists( dir_path ):
-                # shutil.rmtree( dir_path )
                 os.makedirs( dir_path )
             if os.path.exists( file_path ):
-                # shutil.rmtree( dir_path )
                 os.remove( file_path )
-
-            # with open(file_path, "wb") as handle:
-            #     pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
             with open( file_path, 'w' ) as f:
                 f.write( data )
@@ -42,18 +37,14 @@ def codegen_mgr(caller_filepath):
             env = fn_getenv(dirpath)
             tm = env.get_template( filename )
             data = tm.render( tokens )
-            print(data)
+            # print(data)
 
-            # suffix_source_dirpath, _ = dirpath.rsplit('/', 1)
-            # source_dirpath = os.path.join( suffix_source_dirpath, SOURCE_DIRPATH)
             source_dirpath = dirpath.replace(RAW_DIRPATH, SOURCE_DIRPATH)
 
             source_filepath = os.path.join(source_dirpath, filename)
 
-            _fn_write_text_file( source_filepath, data )
+            _fn_replace_write_text_file( source_filepath, data )
 
-            # print(source_dirpath)
-            x = 1
         except Exception as x:
             print(x)
 
