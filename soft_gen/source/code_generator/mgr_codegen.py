@@ -10,22 +10,27 @@ def codegen_mgr(caller_filepath):
     fn_get_tokens = token_mgr()
     tokens = fn_get_tokens()
     fn_getenv = env_mgr()
-    env = fn_getenv()
 
-    def fn_generate_code_for_file(filename):
-        tm = env.get_template( filename )
-        msg = tm.render( tokens )
-        print(msg)
 
-    def fn_generate_code(root_dirpath):
+    def fn_generate_code_for_file(dirpath, filename):
+        try:
+            env = fn_getenv(dirpath)
+            tm = env.get_template( filename )
+            msg = tm.render( tokens )
+            print(msg)
+        except Exception as x:
+            print(x)
+
+    def fn_generate_code_for_dir(root_dirpath):
         for root, dirs, files in os.walk( root_dirpath ):
             for filename in files:
-                fn_generate_code_for_file(filename)
+                fn_generate_code_for_file(root, filename)
             for subdir in dirs:
-                fn_generate_code( os.path.join(root, subdir) )
+                fn_generate_code_for_dir( os.path.join(root, subdir) )
 
             x = 1
 
-    fn_generate_code( _root_dir )
+    def fn_generate_code():
+        fn_generate_code_for_dir( _root_dir )
 
     return fn_generate_code

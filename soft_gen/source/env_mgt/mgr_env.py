@@ -6,8 +6,8 @@ from soft_gen.source.common.constants import RAW_DIRPATH
 
 
 def env_mgr():
-    def fn_getenv():
-        file_loader = FileSystemLoader( RAW_DIRPATH )
+    def fn_getenv(dirpath):
+        file_loader = FileSystemLoader( dirpath )
         env = Environment( loader=file_loader )
         env.filters["filter_x1"] = filter_x1
         env.globals["fn_x2"] = fn_x2
