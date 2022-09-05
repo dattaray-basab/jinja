@@ -20,16 +20,22 @@ def codegen_mgr(caller_filepath):
     fn_getenv = env_mgr()
 
     def fn_pickle_writer(file_path, data):
-        dir_path = os.path.dirname(file_path)
-        if os.path.exists( dir_path ):
-            shutil.rmtree( dir_path )
-        os.mkdir( _source_dir_path )
+        try:
+            dir_path = os.path.dirname(file_path)
+            if not os.path.exists( dir_path ):
+                # shutil.rmtree( dir_path )
+                os.makedirs( dir_path )
+            if os.path.exists( file_path ):
+                # shutil.rmtree( dir_path )
+                os.remove( file_path )
 
-        # with open(file_path, "wb") as handle:
-        #     pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+            # with open(file_path, "wb") as handle:
+            #     pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-        with open( file_path, 'w' ) as f:
-            f.write( data )
+            with open( file_path, 'w' ) as f:
+                f.write( data )
+        except Exception as x:
+            print(x)
 
     def _fn_generate_code_for_file(dirpath, filename):
         try:
