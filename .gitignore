@@ -1,5 +1,7 @@
 
 # Custom
+__SOURCE/
+.DS_Store
 __DATA/
 .idea/
 *.png
