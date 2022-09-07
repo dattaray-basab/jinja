@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/X2"
+    },
+    "definitions": {
+        "X2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "text": {
+                    "$ref": "#/definitions/Text"
+                },
+                "int": {
+                    "$ref": "#/definitions/Int"
+                }
+            },
+            "required": [
+                "int",
+                "text"
+            ],
+            "title": "X2"
+        },
+        "Int": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "$kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "$kind",
+                "default_value",
+                "directive",
+                "id",
+                "value"
+            ],
+            "title": "Int"
+        },
+        "Text": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "$kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$kind",
+                "default_value",
+                "directive",
+                "id",
+                "value"
+            ],
+            "title": "Text"
+        }
+    }
+}

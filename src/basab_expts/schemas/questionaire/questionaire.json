@@ -1,0 +1,46 @@
+[{
+        "id": "1",
+        "kind": "text",
+        "directive": "enter ...",
+        "default_value": "",
+        "value": "aBc"
+    },
+    {
+        "id": "2",
+        "kind": "bool",
+        "directive": "enter ...",
+        "default_value": false,
+        "value": true
+    },
+    {
+        "id": "3",
+        "kind": "int",
+        "directive": "enter ...",
+        "default_value": -1,
+        "value": 0
+    },
+    {
+        "id": "4",
+        "kind": "text_list",
+        "directive": "enter ...",
+        "default_value": [""],
+        "value": ["1", "abc"]
+    },
+    {
+        "id": "5",
+        "kind": "single_pick",
+        "directive": "enter ...",
+	  	"pick_list": ["a", "b", "c", "d"],
+        "default_value": ["a"],
+        "value": ["c"]
+    },
+    {
+        "id": "6",
+        "kind": "multi_pick",
+        "directive": "enter ...",
+	  	"pick_list": ["a", "b", "c", "d"],
+        "default_value": ["a", "c"],
+        "value": ["c"]
+    }
+  	
+]

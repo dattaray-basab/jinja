@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Questionaire"
+    },
+    "definitions": {
+        "Questionaire": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "$ref": "#/definitions/DefaultValue"
+                },
+                "value": {
+                    "$ref": "#/definitions/Value"
+                },
+                "pick_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "kind",
+                "value"
+            ],
+            "title": "Questionaire"
+        },
+        "DefaultValue": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "string"
+                }
+            ],
+            "title": "DefaultValue"
+        },
+        "Value": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "string"
+                }
+            ],
+            "title": "Value"
+        }
+    }
+}
