@@ -23,7 +23,7 @@ def validation_mgr(caller_filepath = None):
             print( x )
             return None
 
-    def fn_validate_json(schema_filepath, json_data):
+    def fn_validate_json_data(schema_filepath, json_data):
 
         schema = _fn_load_json_file(schema_filepath)
         if schema is None:
@@ -39,15 +39,15 @@ def validation_mgr(caller_filepath = None):
 
         return None
 
-    def fn_validate_json_file(schema_filepath, json_filepath):
+    def fn_validate_json_data_file(schema_filepath, json_filepath):
         data = _fn_load_json_file(json_filepath)
         if data is None:
             return False, 'ERROR: cannot load json data'
 
-        error_code = fn_validate_json( schema_filepath, data )
+        error_code = fn_validate_json_data( schema_filepath, data )
         return error_code
 
-    return fn_validate_json_file, fn_validate_json
+    return fn_validate_json_data_file, fn_validate_json_data
 
 
 
