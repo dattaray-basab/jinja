@@ -4,7 +4,7 @@ START 11
     <li>
         {% set v1 = fn_x2(u.name, '%% ') %}
         {{ v1 }}
-        {{ u.name | filter_x1}}
+        {{ u.name | flt_x1}}
     </li>
     {% endfor -%}
 </ul>
