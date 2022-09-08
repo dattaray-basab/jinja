@@ -1,7 +1,7 @@
 from jinja2 import FileSystemLoader, Environment
 
 from soft_gen.source.Filters.str_ops import flt_x1
-from soft_gen.source.Functions.fn_group_1 import fn_x2
+from soft_gen.source.Functions.str_fns import fn_x2
 from soft_gen.source.common.constants import RAW_DIRPATH
 
 
