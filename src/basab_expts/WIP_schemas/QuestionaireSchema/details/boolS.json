@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/BoolType",
+    "definitions": {
+        "BoolType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "kind",
+                "value"
+            ],
+            "title": "BoolType"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/PickmanyType",
+    "definitions": {
+        "PickmanyType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "pick_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "default_value": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "kind",
+                "pick_list",
+                "value"
+            ],
+            "title": "PickmanyType"
+        }
+    }
+}

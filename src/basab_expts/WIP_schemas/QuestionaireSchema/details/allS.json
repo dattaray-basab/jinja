@@ -4,15 +4,30 @@
     "items": {
         "oneOf": [
           {
-            "$ref": "#/definitions/BoolType"
+            "$ref": "#/definitions/BoolT"
           },
           {
-            "$ref": "#/definitions/TextType"
+            "$ref": "#/definitions/TextT"
+          },
+          {
+            "$ref": "#/definitions/IntT"
+          },
+          {
+            "$ref": "#/definitions/TextlistT"
+          },
+          {
+            "$ref": "#/definitions/PickoneT"
+          },
+          {
+            "$ref": "#/definitions/PickmanyT"
+          },
+          {
+            "$ref": "#/definitions/ObjectT"
           }
         ]
     },
     "definitions": {
-        "BoolType": {
+        "BoolT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -20,7 +35,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -37,12 +52,12 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "value"
             ],
-            "title": "BoolType"
+            "title": "BoolT"
         },
-        "TextType": {
+        "TextT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -50,7 +65,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -67,12 +82,12 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "value"
             ],
-            "title": "TextType"
+            "title": "TextT"
         },
-        "IntType": {
+        "IntT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -80,7 +95,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -97,12 +112,12 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "value"
             ],
-            "title": "IntType"
+            "title": "IntT"
         },
-        "TextlistType": {
+        "TextlistT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -110,7 +125,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -133,12 +148,12 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "value"
             ],
-            "title": "TextlistType"
+            "title": "TextlistT"
         },
-        "PickoneType": {
+        "PickoneT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -146,7 +161,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -169,13 +184,13 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "pick_list",
                 "value"
             ],
-            "title": "PickoneType"
+            "title": "PickoneT"
         },
-        "PickmanyType": {
+        "PickmanyT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -183,7 +198,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -212,13 +227,13 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "pick_list",
                 "value"
             ],
-            "title": "PickmanyType"
+            "title": "PickmanyT"
         },
-        "ObjectType": {
+        "ObjectT": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -226,7 +241,7 @@
                     "type": "string",
                     "format": "integer"
                 },
-                "kind": {
+                "typ": {
                     "type": "string"
                 },
                 "directive": {
@@ -243,10 +258,10 @@
                 "default_value",
                 "directive",
                 "id",
-                "kind",
+                "typ",
                 "value"
             ],
-            "title": "ObjectType"
+            "title": "ObjectT"
         },
         "Value": {
             "type": "object",

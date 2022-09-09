@@ -1,0 +1,15 @@
+[{
+        "id": "1",
+        "kind": "text",
+        "directive": "enter ...",
+        "default_value": "",
+        "value": ""
+    },
+    {
+        "id": "2",
+        "kind": "bool",
+        "directive": "enter ...",
+        "default_value": false,
+        "value": false
+    }
+  ]

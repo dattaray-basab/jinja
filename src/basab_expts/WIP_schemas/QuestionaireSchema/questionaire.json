@@ -1,34 +1,34 @@
 [{
         "id": "1",
-        "kind": "text",
+        "typ": "text",
         "directive": "enter ...",
         "default_value": "",
         "value": ""
     },
     {
         "id": "2",
-        "kind": "bool",
+        "typ": "bool",
         "directive": "enter ...",
         "default_value": false,
         "value": false
     },
     {
         "id": "3",
-        "kind": "int",
+        "typ": "int",
         "directive": "enter ...",
         "default_value": 0,
         "value": 0
     },
     {
         "id": "4",
-        "kind": "textlist",
+        "typ": "textlist",
         "directive": "enter ...",
         "default_value": [""],
         "value": [""]
     },
     {
         "id": "5",
-        "kind": "pickone",
+        "typ": "pickone",
         "directive": "enter ...",
 	  	"pick_list": ["a", "b", "c", "d"],
         "default_value": 0,
@@ -36,7 +36,7 @@
     },
     {
         "id": "6",
-        "kind": "pickmany",
+        "typ": "pickmany",
         "directive": "enter ...",
 	  	"pick_list": ["a", "b", "c", "d"],
         "default_value": [0, 2],
@@ -44,7 +44,7 @@
     },
         {
         "id": "7",
-        "kind": "object",
+        "typ": "object",
         "directive": "enter ...",
         "default_value": {},
         "value": {}
