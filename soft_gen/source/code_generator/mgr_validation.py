@@ -28,7 +28,6 @@ def validation_mgr(context = None, apply_context = True):
         if schema is None:
             return False, 'ERROR: cannot load schema'
 
-
         try:
             validate(instance=json_data, schema=schema)
         except jsonschema.exceptions.ValidationError as err_code:

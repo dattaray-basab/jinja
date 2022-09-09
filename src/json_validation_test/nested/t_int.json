@@ -1,0 +1,7 @@
+{
+        "id": "3",
+        "kind": "int",
+        "directive": "enter ...",
+        "default_value": -1,
+        "value": 0
+    }

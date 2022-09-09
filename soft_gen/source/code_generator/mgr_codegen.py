@@ -1,6 +1,6 @@
 import os
 
-from soft_gen.source.common.constants import RAW_DIRPATH, SOURCE_DIRPATH
+from soft_gen.source.common.constants import RAW_FOLDER, SOURCE_FOLDER
 from soft_gen.source.common.mgr_app_info import app_info_mgr
 from soft_gen.source.env_mgt.mgr_env import env_mgr
 from soft_gen.source.code_generator.mgr_token import token_mgr
@@ -33,7 +33,7 @@ def codegen_mgr(caller_filepath, app_info = None):
             data = tm.render( tokens )
             # print(data)
 
-            source_dirpath = dirpath.replace(RAW_DIRPATH, SOURCE_DIRPATH)
+            source_dirpath = dirpath.replace(RAW_FOLDER, SOURCE_FOLDER)
 
             source_filepath = os.path.join(source_dirpath, filename)
 

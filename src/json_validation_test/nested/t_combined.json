@@ -1,0 +1,17 @@
+[
+  {
+        "id": "3",
+        "kind": "int",
+        "directive": "enter ...",
+        "default_value": -1,
+        "value": 0
+    },
+  {
+        "id": "5",
+        "kind": "single_pick",
+        "directive": "enter ...",
+	  	"pick_list": ["a", "b", "c", "d"],
+        "default_value": ["a"],
+        "value": ["c"]
+    }
+]
