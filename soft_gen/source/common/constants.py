@@ -3,4 +3,5 @@ SOURCE_FOLDER = '__SOURCE'
 TOKEN_FOLDER = '__TOKENS'
 SCHEMA_FOLDER = '__SCHEMAS'
 
-DEFAULT_SCHEMA_FILE = 's_questionaire.json'
+# DEFAULT_SCHEMA_FILE = 's_questionaire.json'
+DEFAULT_SCHEMA_FILE = 's_users.json'

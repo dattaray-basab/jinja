@@ -6,8 +6,8 @@ from soft_gen.source.env_mgt.mgr_env import env_mgr
 from soft_gen.source.code_generator.mgr_token import token_mgr
 
 
-def codegen_mgr(caller_filepath, app_info = None):
-    app_info = app_info_mgr(caller_filepath)
+def codegen_mgr(app_info = None):
+    app_info = app_info_mgr()
 
     fn_get_tokens = token_mgr(app_info)
     tokens = fn_get_tokens(app_info['token_dirpath'])
