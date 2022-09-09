@@ -30,6 +30,7 @@ def codegen_mgr(caller_filepath, app_info = None):
         try:
             env = fn_getenv(dirpath)
             tm = env.get_template( filename )
+
             data = tm.render( tokens )
             # print(data)
 
@@ -41,6 +42,7 @@ def codegen_mgr(caller_filepath, app_info = None):
 
         except Exception as x:
             print(x)
+            raise Exception('ERROR: _fn_generate_code_for_file')
 
     _raw_dirs_and_files = []
     def _fn_generate_code_for_dir(root_dirpath):

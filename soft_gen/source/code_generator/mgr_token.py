@@ -19,8 +19,9 @@ def token_mgr(app_info):
             for filepath in file_paths:
                 f = open( filepath)
                 data = json.load( f )
+                content = data['content']
                 file_name, file_ext = os.path.basename(filepath).rsplit('.')
-                tokens[file_name] = data
+                tokens[file_name] = content
 
             return tokens
 
