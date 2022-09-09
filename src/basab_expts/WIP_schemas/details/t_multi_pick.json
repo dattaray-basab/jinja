@@ -1,8 +1,0 @@
-   {
-        "id": "6",
-        "kind": "multi_pick",
-        "directive": "enter ...",
-	  	"pick_list": ["a", "b", "c", "d"],
-        "default_value": ["a", "c"],
-        "value": ["c"]
-    }

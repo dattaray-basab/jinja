@@ -1,7 +1,0 @@
-{
-        "id": "4",
-        "kind": "text_list",
-        "directive": "enter ...",
-        "default_value": [""],
-        "value": ["1", "abc"]
-    }

@@ -1,9 +1,0 @@
-  {
-    "typ_text": {
-      "id": "1",
-      "kind": "text",
-      "directive": "enter ...",
-      "default_value": "",
-      "value": "aBc"
-    }
-   }
