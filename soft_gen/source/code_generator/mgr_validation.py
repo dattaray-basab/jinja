@@ -4,14 +4,14 @@ import os
 import jsonschema
 from jsonschema import validate
 
-def validation_mgr(context = None):
+def validation_mgr(context = None, apply_context = True):
     app_dirpath = None
     if context:
         app_dirpath = context['app_dirpath']
 
     def _fn_load_json_file(json_filepath):
         try:
-            if app_dirpath:
+            if apply_context:
                 json_filepath  = os.path.join(app_dirpath, json_filepath)
 
             abs_filepath = os.path.abspath( json_filepath )
