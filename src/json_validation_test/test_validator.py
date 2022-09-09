@@ -1,8 +1,10 @@
 import json
+import os
 
 from soft_gen.source.code_generator.mgr_validation import validation_mgr
 
-fn_validate_json_data_file, fn_validate_json_data = validation_mgr(__file__)
+app_dirpath = os.path.dirname(__file__)
+fn_validate_json_data_file, fn_validate_json_data = validation_mgr(app_dirpath)
 
 jsonData = json.loads('{"id" : "ID 10w", "name": "Ashwini","contact_number": 12223334444}')
 

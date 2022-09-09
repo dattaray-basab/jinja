@@ -4,19 +4,19 @@ import os
 import jsonschema
 from jsonschema import validate
 
-def validation_mgr(caller_context = None):
-    _caller_dirpath = None
+def validation_mgr(app_dirpath = None):
+    # _caller_dirpath = None
 
-    if caller_context:
-        if type(caller_context) == str:
-            _caller_dirpath = os.path.dirname( caller_context )
-        else:
-            _caller_dirpath = os.path.dirname( caller_context )
+    # if app_dirpath:
+    #     if type( app_dirpath ) == str:
+    #         _caller_dirpath = os.path.dirname( app_dirpath )
+    #     else:
+    #         _caller_dirpath = os.path.dirname( app_dirpath )
 
     def _fn_load_json_file(json_filepath):
         try:
-            if _caller_dirpath:
-                json_filepath  = os.path.join(_caller_dirpath, json_filepath)
+            if app_dirpath:
+                json_filepath  = os.path.join(app_dirpath, json_filepath)
 
             abs_filepath = os.path.abspath( json_filepath )
             with open( abs_filepath, 'r' ) as file:
