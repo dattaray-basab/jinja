@@ -10,7 +10,7 @@ def codegen_mgr(caller_filepath, app_info = None):
     app_info = app_info_mgr(caller_filepath)
 
     fn_get_tokens = token_mgr(app_info)
-    tokens = fn_get_tokens(app_info.token_dirpath)
+    tokens = fn_get_tokens(app_info['token_dirpath'])
     fn_getenv = env_mgr()
 
     def _fn_replace_write_text_file(file_path, data):
@@ -53,6 +53,6 @@ def codegen_mgr(caller_filepath, app_info = None):
             x = 1
 
     def _fn_generate_code():
-        _fn_generate_code_for_dir( app_info.raw_dir_path )
+        _fn_generate_code_for_dir( app_info['raw_dir_path'] )
 
     _fn_generate_code()
