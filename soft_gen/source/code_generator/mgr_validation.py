@@ -11,7 +11,7 @@ def validation_mgr(caller_context = None):
         if type(caller_context) == str:
             _caller_dirpath = os.path.dirname( caller_context )
         else:
-            _caller_dirpath = os.path.dirname( caller_context )1
+            _caller_dirpath = os.path.dirname( caller_context )
 
     def _fn_load_json_file(json_filepath):
         try:

@@ -9,7 +9,7 @@ from soft_gen.source.code_generator.mgr_token import token_mgr
 def codegen_mgr(caller_filepath, app_info = None):
     app_info = app_info_mgr(caller_filepath)
 
-    fn_get_tokens = token_mgr()
+    fn_get_tokens = token_mgr(app_info)
     tokens = fn_get_tokens(app_info.token_dirpath)
     fn_getenv = env_mgr()
 

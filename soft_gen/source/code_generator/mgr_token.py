@@ -1,10 +1,12 @@
 import json
 import os
 
+from soft_gen.source.code_generator.mgr_validation import validation_mgr
 from soft_gen.source.common.dot_dict import DotDict
 
 
-def token_mgr():
+def token_mgr(app_info):
+    fn_validate_json_data_file, _ = validation_mgr()
     def fn_get_tokens(token_dirpath):
         try:
             file_paths = []
