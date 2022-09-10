@@ -1,9 +1,9 @@
 import os
 
-from codegen.source.common.constants import RAW_FOLDER, SOURCE_FOLDER
-from codegen.source.common.mgr_app_info import app_info_mgr
-from codegen.source.code_generator.mgr_env import env_mgr
-from codegen.source.code_generator.mgr_token import token_mgr
+from codegen.src.common.constants import RAW_FOLDER, SOURCE_FOLDER
+from codegen.src.common.mgr_app_info import app_info_mgr
+from codegen.src.code_generator.mgr_env import env_mgr
+from codegen.src.code_generator.mgr_token import token_mgr
 
 
 def codegen_mgr(app_info = None):

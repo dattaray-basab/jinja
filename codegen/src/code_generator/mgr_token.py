@@ -1,9 +1,9 @@
 import json
 import os
 
-from codegen.source.code_generator.mgr_validation import validation_mgr
-from codegen.source.common.constants import SCHEMA_FOLDER, DEFAULT_SCHEMA_REL_FILEPATH
-from codegen.source.common.dot_dict import DotDict
+from codegen.src.code_generator.mgr_validation import validation_mgr
+from codegen.src.common.constants import SCHEMA_FOLDER, DEFAULT_SCHEMA_REL_FILEPATH
+from codegen.src.common.dot_dict import DotDict
 
 
 def token_mgr(app_info):
