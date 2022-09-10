@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/SINGLE_PICK",
+    "$ref": "#/definitions/PickmanyType",
     "definitions": {
-        "SINGLE_PICK": {
+        "PickmanyType": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -25,13 +25,13 @@
                 "default_value": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "integer"
                     }
                 },
                 "value": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "integer"
                     }
                 }
             },
@@ -43,7 +43,7 @@
                 "pick_list",
                 "value"
             ],
-            "title": "SINGLE_PICK"
+            "title": "PickmanyType"
         }
     }
 }

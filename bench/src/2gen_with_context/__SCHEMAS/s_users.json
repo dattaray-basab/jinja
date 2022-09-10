@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome8",
+    "definitions": {
+        "Welcome8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "schema": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Content"
+                    }
+                }
+            },
+            "required": [
+                "content",
+                "schema"
+            ],
+            "title": "Welcome8"
+        },
+        "Content": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "age",
+                "name",
+                "weight"
+            ],
+            "title": "Content"
+        }
+    }
+}

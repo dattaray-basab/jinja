@@ -1,7 +1,8 @@
 {
-      "$schema": "http://json-schema.org/draft-06/schema#",
-      "definitions": {
-        "INT": {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TextlistType",
+    "definitions": {
+        "TextlistType": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -16,10 +17,16 @@
                     "type": "string"
                 },
                 "default_value": {
-                    "type": "integer"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "value": {
-                    "type": "integer"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "required": [
@@ -29,7 +36,7 @@
                 "kind",
                 "value"
             ],
-            "title": "INT"
+            "title": "TextlistType"
         }
     }
 }

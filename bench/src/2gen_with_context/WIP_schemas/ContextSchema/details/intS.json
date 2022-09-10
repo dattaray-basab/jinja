@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/IntType",
+    "definitions": {
+        "IntType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "kind": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "integer"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "kind",
+                "value"
+            ],
+            "title": "IntType"
+        }
+    }
+}

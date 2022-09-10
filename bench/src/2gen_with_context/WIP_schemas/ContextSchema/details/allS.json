@@ -1,0 +1,272 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/BoolT"
+          },
+          {
+            "$ref": "#/definitions/TextT"
+          },
+          {
+            "$ref": "#/definitions/IntT"
+          },
+          {
+            "$ref": "#/definitions/TextlistT"
+          },
+          {
+            "$ref": "#/definitions/PickoneT"
+          },
+          {
+            "$ref": "#/definitions/PickmanyT"
+          },
+          {
+            "$ref": "#/definitions/ObjectT"
+          }
+        ]
+    },
+    "definitions": {
+        "BoolT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "BoolT"
+        },
+        "TextT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "TextT"
+        },
+        "IntT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "integer"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "IntT"
+        },
+        "TextlistT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "TextlistT"
+        },
+        "PickoneT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "pick_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "default_value": {
+                    "type": "integer"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "pick_list",
+                "value"
+            ],
+            "title": "PickoneT"
+        },
+        "PickmanyT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "pick_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "default_value": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "pick_list",
+                "value"
+            ],
+            "title": "PickmanyT"
+        },
+        "ObjectT": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "$ref": "#/definitions/Value"
+                },
+                "value": {
+                    "$ref": "#/definitions/Value"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "ObjectT"
+        },
+        "Value": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Value"
+        }
+    }
+}

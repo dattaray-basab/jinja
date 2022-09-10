@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/INT",
+    "$ref": "#/definitions/BoolType",
     "definitions": {
-        "INT": {
+        "BoolType": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -17,10 +17,10 @@
                     "type": "string"
                 },
                 "default_value": {
-                    "type": "integer"
+                    "type": "boolean"
                 },
                 "value": {
-                    "type": "integer"
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -30,7 +30,7 @@
                 "kind",
                 "value"
             ],
-            "title": "INT"
+            "title": "BoolType"
         }
     }
 }
