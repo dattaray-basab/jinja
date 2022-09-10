@@ -26,13 +26,14 @@ def validation_mgr(context = None, apply_context = True):
 
         schema = _fn_load_json_file(schema_filepath)
         if schema is None:
-            return False, 'ERROR: cannot load schema'
+            return 'ERROR: cannot load schema'
 
         try:
             validate(instance=json_data, schema=schema)
+
         except jsonschema.exceptions.ValidationError as err_code:
             print(err_code)
-            err_code = "Given JSON data is InValid"
+            err_code = "ERROR: Given JSON data is InValid"
             return err_code
 
         return None
