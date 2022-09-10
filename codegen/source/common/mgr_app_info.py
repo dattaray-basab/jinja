@@ -1,8 +1,8 @@
 import os
 import shutil
 
-from srcgen.source.common.constants import RAW_FOLDER, SOURCE_FOLDER, TOKEN_FOLDER, SCHEMA_FOLDER
-from srcgen.source.common.dot_dict import DotDict
+from codegen.source.common.constants import RAW_FOLDER, SOURCE_FOLDER, TOKEN_FOLDER, SCHEMA_FOLDER
+from codegen.source.common.dot_dict import DotDict
 
 
 def app_info_mgr():

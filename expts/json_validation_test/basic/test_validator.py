@@ -1,7 +1,7 @@
 import json
 import os
 
-from srcgen.source.code_generator.mgr_validation import validation_mgr
+from codegen.source.code_generator.mgr_validation import validation_mgr
 
 app_dirpath = os.path.dirname(__file__)
 fn_validate_json_data_file, fn_validate_json_data = validation_mgr({'app_dirpath':app_dirpath})

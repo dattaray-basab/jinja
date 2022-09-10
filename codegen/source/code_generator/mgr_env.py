@@ -1,8 +1,8 @@
 from jinja2 import FileSystemLoader, Environment
 
-from srcgen.source.Filters.str_ops import flt_x1
-from srcgen.source.Functions.str_fns import fn_x2
-from srcgen.source.common.constants import RAW_FOLDER
+from codegen.source.Filters.str_ops import flt_x1
+from codegen.source.Functions.str_fns import fn_x2
+from codegen.source.common.constants import RAW_FOLDER
 
 
 def env_mgr():
