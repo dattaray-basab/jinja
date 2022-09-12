@@ -42,12 +42,19 @@
         "default_value": [0, 2],
         "value": [0, 2]
     },
-        {
+    {
         "id": "7",
         "typ": "object",
         "directive": "enter ...",
         "default_value": {},
         "value": {}
+    },
+    {
+        "id": "7",
+        "typ": "object",
+        "directive": "enter ...",
+        "default_value": {},
+        "value": {"k1": 3, "k2": true}
     }
   	
 ]

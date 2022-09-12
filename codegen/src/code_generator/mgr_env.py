@@ -1,7 +1,7 @@
 from jinja2 import FileSystemLoader, Environment
 
-from codegen.src.Filters.str_ops import flt_x1
-from codegen.src.Functions.str_fns import fn_x2
+from codegen.src.__FILTERS.str_ops import flt_x1
+from codegen.src.__FUNCTIONS.str_fns import fn_x2
 from codegen.src.common.constants import RAW_FOLDER
 
 
