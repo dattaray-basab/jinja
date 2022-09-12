@@ -16,7 +16,7 @@ def context_mgr(app_info):
         return data
 
     fn_validate_json_data_file, fn_validate_json_data = validation_mgr(app_info)
-    def fn_get_tokens(token_dirpath):
+    def fn_get_context(token_dirpath):
         try:
             file_paths = []
             tokens = DotDict( {} )
@@ -52,4 +52,4 @@ def context_mgr(app_info):
             if error_code is not None:
                 raise Exception( error_code )
 
-    return  fn_get_tokens
+    return  fn_get_context

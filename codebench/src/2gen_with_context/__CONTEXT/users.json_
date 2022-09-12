@@ -2,6 +2,6 @@
     "__SCHEMA": "s_users",
     "__CONTENT": [
         {"name": "Ashwini", "age": 30, "weight": 139.3},
-        {"name": "Jake", "age": 62, "weight": 123}
+        {"name": "Jake", "age": 62, "weight": 177.8}
     ]
 }

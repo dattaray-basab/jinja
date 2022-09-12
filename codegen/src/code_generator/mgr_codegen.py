@@ -9,8 +9,8 @@ from codegen.src.code_generator.mgr_context import context_mgr
 def codegen_mgr(app_info = None):
     app_info = app_info_mgr()
 
-    fn_get_tokens = context_mgr(app_info)
-    tokens = fn_get_tokens(app_info['token_dirpath'])
+    fn_get_context = context_mgr(app_info)
+    tokens = fn_get_context(app_info['token_dirpath'])
     fn_getenv = env_mgr()
 
     def _fn_replace_write_text_file(file_path, data):
