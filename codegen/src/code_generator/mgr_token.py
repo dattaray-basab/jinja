@@ -2,7 +2,7 @@ import json
 import os
 
 from codegen.src.code_generator.mgr_validation import validation_mgr
-from codegen.src.common.constants import SCHEMA_FOLDER, DEFAULT_SCHEMA_REL_FILEPATH, SCHEMA_NAME, SCHEMA_DIRPATH
+from codegen.src.common.constants import SCHEMA_NAME, SCHEMA_DIRPATH
 from codegen.src.common.dot_dict import DotDict
 
 
@@ -33,11 +33,7 @@ def token_mgr(app_info):
                 if SCHEMA_NAME in data.keys():
                     schema_filepath = os.path.join( app_info[SCHEMA_DIRPATH], data[SCHEMA_NAME] + '.json' )
                     if os.path.exists(schema_filepath):
-                        _fn_do_schema_check( data, schema_filepath )
-
-                #
-                # schema_filepath = os.path.join(app_info['schema_dirpath'], DEFAULT_SCHEMA_REL_FILEPATH)
-                # _fn_do_schema_check( data, schema_filepath )
+                        _fn_run_schema_check( data, schema_filepath )
 
                 content = data['content']
                 file_name, file_ext = os.path.basename(filepath).rsplit('.')
@@ -49,7 +45,7 @@ def token_mgr(app_info):
             print(x)
             return None
 
-    def _fn_do_schema_check(data, schema_filepath):
+    def _fn_run_schema_check(data, schema_filepath):
         schema_data = _fn_get_json_file_data( schema_filepath )
         if schema_data is not None:
             error_code = fn_validate_json_data( schema_filepath, data )

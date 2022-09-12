@@ -4,8 +4,5 @@ TOKEN_FOLDER = '__TOKENS'
 SCHEMA_FOLDER = '__SCHEMAS'
 SCHEMA_DIRPATH = 'schema_dirpath'
 
-# DEFAULT_SCHEMA_FILE = 's_context.json'
-
-DEFAULT_SCHEMA_REL_FILEPATH = 's_users.json'
 
 SCHEMA_NAME = "_schema_name"
