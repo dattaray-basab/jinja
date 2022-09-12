@@ -3,13 +3,13 @@ import os
 from codegen.src.common.constants import RAW_FOLDER, SOURCE_FOLDER
 from codegen.src.common.mgr_app_info import app_info_mgr
 from codegen.src.code_generator.mgr_env import env_mgr
-from codegen.src.code_generator.mgr_token import token_mgr
+from codegen.src.code_generator.mgr_context import context_mgr
 
 
 def codegen_mgr(app_info = None):
     app_info = app_info_mgr()
 
-    fn_get_tokens = token_mgr(app_info)
+    fn_get_tokens = context_mgr(app_info)
     tokens = fn_get_tokens(app_info['token_dirpath'])
     fn_getenv = env_mgr()
 

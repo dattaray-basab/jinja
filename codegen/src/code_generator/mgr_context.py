@@ -6,7 +6,7 @@ from codegen.src.common.constants import SCHEMA_NAME, SCHEMA_DIRPATH, CONTENT
 from codegen.src.common.dot_dict import DotDict
 
 
-def token_mgr(app_info):
+def context_mgr(app_info):
     def _fn_get_json_file_data(filepath):
         if not os.path.exists( filepath ):
             return None
