@@ -7,6 +7,9 @@ from codegen.src.common.dot_dict import DotDict
 
 
 def context_mgr(app_info):
+
+    fn_validate_json_data_file, fn_validate_json_data = validation_mgr(app_info)
+
     def _fn_get_json_file_data(filepath):
         if not os.path.exists( filepath ):
             return None
@@ -15,16 +18,23 @@ def context_mgr(app_info):
             data = json.load( f )
         return data
 
-    fn_validate_json_data_file, fn_validate_json_data = validation_mgr(app_info)
+    def _fn_run_schema_check(data, schema_filepath):
+        schema_data = _fn_get_json_file_data( schema_filepath )
+        if schema_data is not None:
+            error_code = fn_validate_json_data( schema_filepath, data )
+            if error_code is not None:
+                raise Exception( error_code )
+
     def fn_get_context(token_dirpath):
         try:
             file_paths = []
-            tokens = DotDict( {} )
+            tokens = {}
+            tokens_found = False
             for root, directories, file in os.walk( token_dirpath ):
                 for file in file:
                     if (file.endswith( ".json" )):
                         file_paths.append( os.path.join(root, file) )
-            tokens = DotDict({})
+            # tokens = DotDict({})
             for filepath in file_paths:
 
                 data = _fn_get_json_file_data( filepath )
@@ -37,19 +47,19 @@ def context_mgr(app_info):
 
                 content = data[CONTENT]
                 file_name, file_ext = os.path.basename(filepath).rsplit('.')
+
                 tokens[file_name] = content
 
-            return tokens
+                tokens_found = True
+            if tokens_found:
+                return tokens
+            else:
+                return None
 
         except Exception as x:
             print(x)
             return None
 
-    def _fn_run_schema_check(data, schema_filepath):
-        schema_data = _fn_get_json_file_data( schema_filepath )
-        if schema_data is not None:
-            error_code = fn_validate_json_data( schema_filepath, data )
-            if error_code is not None:
-                raise Exception( error_code )
+
 
     return  fn_get_context

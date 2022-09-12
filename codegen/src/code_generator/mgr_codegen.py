@@ -1,6 +1,6 @@
 import os
 
-from codegen.src.common.constants import RAW_FOLDER, SOURCE_FOLDER
+from codegen.src.common.constants import RAW_FOLDER, SOURCE_FOLDER, ERROR_ON_MISSING_CONTEXT
 from codegen.src.common.mgr_app_info import app_info_mgr
 from codegen.src.code_generator.mgr_env import env_mgr
 from codegen.src.code_generator.mgr_context import context_mgr
@@ -10,7 +10,10 @@ def codegen_mgr(app_info = None):
     app_info = app_info_mgr()
 
     fn_get_context = context_mgr(app_info)
-    tokens = fn_get_context(app_info['token_dirpath'])
+    context = fn_get_context(app_info['token_dirpath'])
+    if ERROR_ON_MISSING_CONTEXT and context is None:
+        raise Exception( 'ERROR: Missing Context' )
+
     fn_getenv = env_mgr()
 
     def _fn_replace_write_text_file(file_path, data):
@@ -31,14 +34,13 @@ def codegen_mgr(app_info = None):
             env = fn_getenv(dirpath)
             tm = env.get_template( filename )
 
-            data = tm.render( tokens )
-            # print(data)
+            if context is not None:
+                data = tm.render( context )
+                source_dirpath = dirpath.replace(RAW_FOLDER, SOURCE_FOLDER)
 
-            source_dirpath = dirpath.replace(RAW_FOLDER, SOURCE_FOLDER)
+                source_filepath = os.path.join(source_dirpath, filename)
 
-            source_filepath = os.path.join(source_dirpath, filename)
-
-            _fn_replace_write_text_file( source_filepath, data )
+                _fn_replace_write_text_file( source_filepath, data )
 
         except Exception as x:
             print(x)
