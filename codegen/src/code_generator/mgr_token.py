@@ -2,7 +2,7 @@ import json
 import os
 
 from codegen.src.code_generator.mgr_validation import validation_mgr
-from codegen.src.common.constants import SCHEMA_NAME, SCHEMA_DIRPATH
+from codegen.src.common.constants import SCHEMA_NAME, SCHEMA_DIRPATH, CONTENT
 from codegen.src.common.dot_dict import DotDict
 
 
@@ -35,7 +35,7 @@ def token_mgr(app_info):
                     if os.path.exists(schema_filepath):
                         _fn_run_schema_check( data, schema_filepath )
 
-                content = data['content']
+                content = data[CONTENT]
                 file_name, file_ext = os.path.basename(filepath).rsplit('.')
                 tokens[file_name] = content
 

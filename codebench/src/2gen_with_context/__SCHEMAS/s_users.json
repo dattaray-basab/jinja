@@ -1,15 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome7",
+    "$ref": "#/definitions/Welcome6",
     "definitions": {
-        "Welcome7": {
+        "Welcome6": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "_schema_name": {
+                "__SCHEMA": {
                     "type": "string"
                 },
-                "content": {
+                "__CONTENT": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Content"
@@ -17,10 +17,9 @@
                 }
             },
             "required": [
-                "_schema_name",
-                "content"
+                "__CONTENT"
             ],
-            "title": "Welcome7"
+            "title": "Welcome6"
         },
         "Content": {
             "type": "object",

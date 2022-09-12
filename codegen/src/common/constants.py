@@ -4,5 +4,5 @@ TOKEN_FOLDER = '__CONTEXT'
 SCHEMA_FOLDER = '__SCHEMAS'
 SCHEMA_DIRPATH = 'schema_dirpath'
 
-
-SCHEMA_NAME = "_schema_name"
+SCHEMA_NAME = "__SCHEMA"
+CONTENT = "__CONTENT"
