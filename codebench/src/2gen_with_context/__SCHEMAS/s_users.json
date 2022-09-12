@@ -6,9 +6,6 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "_schema_name": {
-                    "type": "string"
-                },
                 "content": {
                     "type": "array",
                     "items": {

@@ -1,0 +1,61 @@
+[
+    {
+        "id": "1",
+        "typ": "text",
+        "directive": "enter ...",
+        "default_value": "",
+        "value": ""
+    },
+    {
+        "id": "2",
+        "typ": "bool",
+        "directive": "enter ...",
+        "default_value": false,
+        "value": false
+    },
+    {
+        "id": "3",
+        "typ": "int",
+        "directive": "enter ...",
+        "default_value": 0,
+        "value": 0
+    },
+    {
+        "id": "4",
+        "typ": "textlist",
+        "directive": "enter ...",
+        "default_value": [""],
+        "value": [""]
+    },
+    {
+        "id": "5",
+        "typ": "pickone",
+        "directive": "enter ...",
+	  	"pick_list": ["a", "b", "c", "d"],
+        "default_value": 0,
+        "value": 0
+    },
+    {
+        "id": "6",
+        "typ": "pickmany",
+        "directive": "enter ...",
+	  	"pick_list": ["a", "b", "c", "d"],
+        "default_value": [0, 2],
+        "value": [0, 2]
+    },
+    {
+        "id": "7",
+        "typ": "object",
+        "directive": "enter ...",
+        "default_value": {},
+        "value": {}
+    },
+    {
+        "id": "7",
+        "typ": "object",
+        "directive": "enter ...",
+        "default_value": {},
+        "value": {"k1": 3, "k2": true}
+    }
+  	
+]
