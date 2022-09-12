@@ -1,0 +1,12 @@
+{
+  "__SCHEMA": "s_context",
+  "__CONTENT": [
+	{
+	  "id": "1",
+	  "typ": "text",
+	  "directive": "enter ...",
+	  "default_value": "",
+	  "value": ""
+	}
+  ]
+}

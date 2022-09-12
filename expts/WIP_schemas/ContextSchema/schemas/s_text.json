@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TextType",
+    "definitions": {
+        "TextType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "__SCHEMA": {
+                    "type": "string"
+                },
+                "__CONTENT": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Content"
+                    }
+                }
+            },
+            "required": [
+                "__CONTENT"
+            ],
+            "title": "TextType"
+        },
+        "Content": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "typ": {
+                    "type": "string"
+                },
+                "directive": {
+                    "type": "string"
+                },
+                "default_value": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "default_value",
+                "directive",
+                "id",
+                "typ",
+                "value"
+            ],
+            "title": "Content"
+        }
+    }
+}
