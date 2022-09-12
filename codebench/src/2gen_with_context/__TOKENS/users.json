@@ -1,5 +1,5 @@
 {
-    "schema": "s_users",
+    "_schema_name": "s_users",
     "content": [
         {"name": "Alex", "age": 18, "weight": 78.5},
         {"name": "Nikolas", "age": 20, "weight": 92.1},
