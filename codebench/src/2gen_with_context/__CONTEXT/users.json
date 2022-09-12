@@ -1,8 +1,7 @@
 {
     "_schema_name": "s_users",
     "content": [
-        {"name": "Alex", "age": 18, "weight": 78.5},
-        {"name": "Nikolas", "age": 20, "weight": 92.1},
-        {"name": "Ivan", "age": 39, "weight": 83.9}
+        {"name": "Ashwini", "age": 30, "weight": 139.3},
+        {"name": "Margaret", "age": 62, "weight": 123}
     ]
 }
