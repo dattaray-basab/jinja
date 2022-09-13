@@ -14,7 +14,7 @@ def codegen_mgr(app_info = None):
     if ERROR_ON_MISSING_CONTEXT and context is None:
         raise Exception( 'ERROR: Missing Context' )
 
-    fn_getenv = env_mgr()
+    fn_getenv = env_mgr(app_info)
 
     def _fn_replace_write_text_file(file_path, data):
         try:
