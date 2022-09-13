@@ -23,9 +23,6 @@
                             "$ref": "#/definitions/IntT"
                           },
                           {
-                            "$ref": "#/definitions/TextlistT"
-                          },
-                          {
                             "$ref": "#/definitions/PickoneT"
                           },
                           {
@@ -89,6 +86,12 @@
                 },
                 "value": {
                     "type": "string"
+                },
+                "min": {
+                    "type": "integer"
+                },
+                "max": {
+                    "type": "integer"
                 }
             },
             "required": [
@@ -96,7 +99,9 @@
                 "directive",
                 "id",
                 "typ",
-                "value"
+                "value",
+                "min",
+                "max"
             ],
             "title": "TextT"
         },
@@ -119,6 +124,12 @@
                 },
                 "value": {
                     "type": "integer"
+                },
+                "min": {
+                    "type": "integer"
+                },
+                "max": {
+                    "type": "integer"
                 }
             },
             "required": [
@@ -126,45 +137,11 @@
                 "directive",
                 "id",
                 "typ",
-                "value"
+                "value",
+                "min",
+                "max"
             ],
             "title": "IntT"
-        },
-        "TextlistT": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "integer"
-                },
-                "typ": {
-                    "type": "string"
-                },
-                "directive": {
-                    "type": "string"
-                },
-                "default_value": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "value": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "default_value",
-                "directive",
-                "id",
-                "typ",
-                "value"
-            ],
-            "title": "TextlistT"
         },
         "PickoneT": {
             "type": "object",

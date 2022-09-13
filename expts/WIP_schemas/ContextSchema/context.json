@@ -6,6 +6,8 @@
 	  "typ": "text",
 	  "directive": "enter ...",
 	  "default_value": "",
+	  "min": 0,
+	  "max": 20,
 	  "value": ""
 	},
 	{
@@ -19,18 +21,13 @@
         "id": "3",
         "typ": "int",
         "directive": "enter ...",
+	  	"max": 0,
+	  	"min": 10,
         "default_value": 0,
         "value": 0
     },
     {
         "id": "4",
-        "typ": "textlist",
-        "directive": "enter ...",
-        "default_value": [""],
-        "value": [""]
-    },
-    {
-        "id": "5",
         "typ": "pickone",
         "directive": "enter ...",
 	  	"pick_list": ["a", "b", "c", "d"],
@@ -38,7 +35,7 @@
         "value": 0
     },
     {
-        "id": "6",
+        "id": "5",
         "typ": "pickmany",
         "directive": "enter ...",
 	  	"pick_list": ["a", "b", "c", "d"],
