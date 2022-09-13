@@ -13,8 +13,8 @@ def codegen_mgr(app_info = None):
     context = fn_get_context(app_info['token_dirpath'])
     if ERROR_ON_MISSING_CONTEXT and context is None:
         raise Exception( 'ERROR: Missing Context' )
-
-    fn_getenv = env_mgr(app_info)
+    if context is not None:
+        fn_getenv = env_mgr(app_info)
 
     def _fn_replace_write_text_file(file_path, data):
         try:
@@ -31,10 +31,9 @@ def codegen_mgr(app_info = None):
 
     def _fn_generate_code_for_file(dirpath, filename):
         try:
-            env = fn_getenv(dirpath)
-            tm = env.get_template( filename )
-
             if context is not None:
+                env = fn_getenv( dirpath )
+                tm = env.get_template( filename )
                 data = tm.render( context )
                 source_dirpath = dirpath.replace(RAW_FOLDER, SOURCE_FOLDER)
 

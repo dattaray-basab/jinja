@@ -27,7 +27,7 @@ def env_mgr(app_info):
                 if isfunction(member[1]):
                     if member[0] not in env_place.keys():
                         env_place[member[0]] = member[1]
-                    pass
+
 
 
     def fn_getenv(dirpath):
