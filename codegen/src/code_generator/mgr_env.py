@@ -28,17 +28,9 @@ def env_mgr(app_info):
                     if member[0] not in env_place.keys():
                         env_place[member[0]] = member[1]
 
-
-
     def fn_getenv(dirpath):
         file_loader = FileSystemLoader( dirpath )
         env = Environment( loader=file_loader )
-
-        # module_dot_path = 'codegen.src.__FUNCTIONS.str_fns'
-        # module = importlib.import_module( module_dot_path )
-        # fn_list = [o for o in getmembers( module ) if isfunction( o[1] )]
-        # env.filters["flt_x1"] = flt_x1
-        # env.globals["fn_x2"] = fn_list[0] # fn_x2
 
         _fn_attach_local_bindings_to_env( env.filters, ENV_FILTERS )
         _fn_attach_local_bindings_to_env( env.globals, ENV_FUNCTIONS )
@@ -46,3 +38,9 @@ def env_mgr(app_info):
         return env
 
     return fn_getenv
+
+# module_dot_path = 'codegen.src.__FUNCTIONS.str_fns'
+# module = importlib.import_module( module_dot_path )
+# fn_list = [o for o in getmembers( module ) if isfunction( o[1] )]
+# env.filters["flt_x1"] = flt_x1
+# env.globals["fn_x2"] = fn_list[0] # fn_x2
